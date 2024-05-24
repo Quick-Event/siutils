@@ -24,7 +24,9 @@ add_library(libsiut SHARED
     src/sipunch.cpp
     )
 
-add_subdirectory(3rdparty/necrolog)
+if(NOT TARGET libnecrolog)
+	add_subdirectory(3rdparty/necrolog SYSTEM)
+endif()
 
 qt6_add_translation(QM_FILES
 	libsiut-cs_CZ.ts
