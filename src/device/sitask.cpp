@@ -31,6 +31,17 @@ SiTask::~SiTask()
 	//qfInfo() << this << "destroyed";
 }
 
+const char *SiTask::typeToString(Type type)
+{
+	switch (type) {
+	case Type::Invalid: return "Invalid";
+	case Type::CardRead: return "CardRead";
+	case Type::Punch: return "Punch";
+	case Type::Other: return "Other";
+	}
+	return "???";
+}
+
 void SiTask::finishAndDestroy(bool ok, QVariant result)
 {
 	//qfWarning() << __FUNCTION__ << this;

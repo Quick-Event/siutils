@@ -23,6 +23,7 @@ public:
 	~SiTask() override;
 
 	enum class Type {Invalid=0, CardRead, Punch, Other};
+	static const char * typeToString(Type type);
 
 	Q_SIGNAL void sigSendCommand(int cmd, const QByteArray &data);
 	Q_SIGNAL void sigSendACK();
